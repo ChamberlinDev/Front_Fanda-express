@@ -55,7 +55,7 @@
             <li><a href="about.html">A propos de nous</a></li>           
             <li><a href="contact.html">Contact</a></li>
             <!-- <a class="btn mx-2" href="connexion.html" ><i class="bi bi-person"></i></a> -->
-            <a href="#" class="btn btn-primary text-light">Se connecter</a>
+            <a href="connexion.html" class="btn btn-primary text-light">Se connecter</a>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -187,8 +187,8 @@
               <h4><a href="" class="text-center">Hotel Himalaya</a></h4>
               <p>Description.....</p>
            
-            <button class="btn btn-primary" type="submit">Reservez</button>
-            <button class="btn btn-warning" type="submit">Details</button>
+            <button class="btn btn-primary open-modal" type="submit">Reservez</button>
+            <button class="btn btn-info" type="submit">Details</button>
 
           </div>
           </div><!-- Card Item -->
@@ -200,8 +200,8 @@
               <h4><a href="" class="text-center">Hotel MLJ</a></h4>
               <p>Description.....</p>
            
-            <button class="btn btn-primary" type="submit">Reservez</button>
-            <button class="btn btn-warning" type="submit">Details</button>
+            <button class="btn btn-primary open-modal" type="submit">Reservez</button>
+            <button class="btn btn-info" type="submit">Details</button>
 
           </div>
           </div><!-- Card Item -->
@@ -216,6 +216,51 @@
 
     </section>
     <!-- / Fin Section hotel -->
+
+     <!-- Modal -->
+   <div class="container">
+
+    <dialog id="reservationModal">
+      <form method="dialog">
+          <h2>Formulaire de Réservation</h2>
+          <label>Nom :</label>
+          <input type="text" class="form-control" required>
+  
+          <label>Email :</label>
+          <input type="email" class="form-control" required>
+  
+          <label>Date d'arrivée :</label>
+          <input type="date" class="form-control" required>
+  
+          <label>Date de départ :</label>
+          <input type="date" class="form-control" required>
+  
+          <br>
+          <button type="submit" class="btn btn-success">Valider</button>
+          <button type="button" class="btn btn-danger close-modal">Fermer</button>
+      </form>
+  </dialog>
+  
+   </div>
+  
+  <script>
+      // Sélection des éléments du modal
+      const modal = document.getElementById("reservationModal");
+      const openButtons = document.querySelectorAll(".open-modal");
+      const closeButton = document.querySelector(".close-modal");
+  
+      // Ouvrir le modal quand on clique sur "Réservez"
+      openButtons.forEach(button => {
+          button.addEventListener("click", () => {
+              modal.showModal();
+          });
+      });
+  
+      // Fermer le modal
+      closeButton.addEventListener("click", () => {
+          modal.close();
+      });
+  </script>
 
      <!-- A propos de nous Section -->
      <section id="about" class="about section light-background">
