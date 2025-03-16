@@ -6,6 +6,24 @@
 * License: https://bootstrapmade.com/license/
 */
 
+//Fonction du dark-mode
+
+document.getElementById('darkModeToggle').addEventListener('change', function() {
+    const elements = document.querySelectorAll('body, header, footer, span, .card, h1, h2, h3, h4, h5, h6, a, button, .btn, input, textarea, select, table, tr, td, th, .notification, .dropdown-menu, .dropdown-item, .navbar, .list-group-item, .modal-content, .modal-header, .modal-footer, .bi, .section, .search-bar, .sidebar, .sidebar-nav, .dashboard, .echart, .copyright');
+    const themeLabel = document.getElementById("theme-label");
+
+    if (this.checked) {
+        elements.forEach(element => element.classList.add('dark-mode'));
+        themeLabel.textContent = "light";
+
+    } else {
+        elements.forEach(element => element.classList.remove('dark-mode'));
+        themeLabel.textContent = "dark";
+    }
+});
+
+
+
 (function() {
   "use strict";
 
